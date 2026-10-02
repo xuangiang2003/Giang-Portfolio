@@ -1,5 +1,5 @@
-import { SITE_URL } from "@/data/profile";
+import { LANGUAGES, SITE_URL } from "@/data/site";
 
 export default function sitemap() {
-  return [{ url: SITE_URL, lastModified: new Date() }];
+  return LANGUAGES.map(({ path }) => ({ url: new URL(path, SITE_URL).href, lastModified: new Date() }));
 }

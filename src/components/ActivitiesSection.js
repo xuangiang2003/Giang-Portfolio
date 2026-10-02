@@ -1,12 +1,13 @@
 import Section from "./ui/Section";
 import { Stagger, StaggerItem } from "./ui/motion";
-import { ACTIVITIES } from "@/data/profile";
 
-function ActivitiesSection() {
+function ActivitiesSection({ content }) {
+  const { activities, ui } = content;
+
   return (
-    <Section id="activities" eyebrow="Hoạt động" title="Hoạt động ngoại khoá và tình nguyện">
+    <Section id="activities" eyebrow={ui.activities.eyebrow} title={ui.activities.title}>
       <Stagger className="grid gap-4 md:grid-cols-2">
-        {ACTIVITIES.map((item) => (
+        {activities.map((item) => (
           <StaggerItem key={`${item.title}-${item.time}`}>
             <article className="h-full rounded-2xl border border-slate-200 bg-white p-6">
               <p className="text-sm font-medium text-accent-700">{item.time}</p>

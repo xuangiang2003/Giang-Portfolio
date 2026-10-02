@@ -1,13 +1,14 @@
 import Section from "./ui/Section";
 import { Reveal } from "./ui/motion";
-import { AWARDS, EDUCATION } from "@/data/profile";
 
-function EducationSection() {
+function EducationSection({ content }) {
+  const { education, awards, ui } = content;
+
   return (
-    <Section id="education" eyebrow="Học vấn" title="Quá trình học tập">
+    <Section id="education" eyebrow={ui.education.eyebrow} title={ui.education.title}>
       <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr]">
         <ol className="space-y-8 border-l-2 border-accent-100 pl-6">
-          {EDUCATION.map((item) => (
+          {education.map((item) => (
             <li key={`${item.degree}-${item.time}`} className="relative">
               <span
                 className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full border-2 border-accent-600 bg-paper"
@@ -29,9 +30,9 @@ function EducationSection() {
 
         <Reveal delay={0.1}>
           <div className="rounded-2xl border border-slate-200 bg-white p-6">
-            <h3 className="font-semibold text-ink">Học bổng và giải thưởng</h3>
+            <h3 className="font-semibold text-ink">{ui.education.awards}</h3>
             <ul className="mt-4 space-y-3 text-slate-600">
-              {AWARDS.map((award) => (
+              {awards.map((award) => (
                 <li key={award} className="flex gap-3">
                   <span className="text-accent-600" aria-hidden="true">
                     ✓

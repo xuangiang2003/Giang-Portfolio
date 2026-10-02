@@ -1,18 +1,19 @@
 import Section from "./ui/Section";
 import { Stagger, StaggerItem } from "./ui/motion";
-import { ROTATIONS } from "@/data/profile";
 
-function RotationsSection() {
+function RotationsSection({ content }) {
+  const { rotations, ui } = content;
+
   return (
     <Section
       id="rotations"
-      eyebrow="Lâm sàng"
-      title="Thực tập lâm sàng"
-      intro="Các khoa đã đi thực tập trong chương trình đào tạo, dưới sự hướng dẫn của giảng viên và bác sĩ tại bệnh viện."
+      eyebrow={ui.rotations.eyebrow}
+      title={ui.rotations.title}
+      intro={ui.rotations.intro}
       tinted
     >
       <Stagger className="grid gap-4 sm:grid-cols-2">
-        {ROTATIONS.map((item) => (
+        {rotations.map((item) => (
           <StaggerItem key={`${item.department}-${item.hospital}`}>
             <article className="h-full rounded-2xl border border-slate-200 bg-paper p-6 transition-colors hover:border-accent-400">
               <div className="flex flex-wrap items-baseline justify-between gap-2">

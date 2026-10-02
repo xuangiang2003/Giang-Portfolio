@@ -1,42 +1,40 @@
 import Section from "./ui/Section";
 import { Reveal, Stagger, StaggerItem } from "./ui/motion";
-import { CONTACT, PROFILE } from "@/data/profile";
+import { CONTACT } from "@/data/site";
 
-// Kênh nào để trống trong src/data/profile.js thì tự ẩn
-const CHANNELS = [
-  { label: "Email", value: CONTACT.email, link: `mailto:${CONTACT.email}` },
-  { label: "Điện thoại", value: CONTACT.phone, link: `tel:${CONTACT.phone.replace(/\s/g, "")}` },
-  { label: "LinkedIn", value: CONTACT.linkedin && "Hồ sơ LinkedIn", link: CONTACT.linkedin },
-  { label: "Facebook", value: CONTACT.facebook && "Trang Facebook", link: CONTACT.facebook },
-  { label: "Zalo", value: CONTACT.zalo && "Nhắn qua Zalo", link: CONTACT.zalo },
-].filter((channel) => channel.value);
+function ContactSection({ content }) {
+  const { profile, ui } = content;
+  const text = ui.contactSection;
 
-function ContactSection() {
+  // Kênh nào để trống trong src/data/site.js thì tự ẩn
+  const channels = [
+    { label: text.channels.email, value: CONTACT.email, link: `mailto:${CONTACT.email}` },
+    { label: text.channels.phone, value: CONTACT.phone, link: `tel:${CONTACT.phone.replace(/\s/g, "")}` },
+    { label: text.channels.linkedin, value: CONTACT.linkedin && text.channels.linkedinValue, link: CONTACT.linkedin },
+    { label: text.channels.facebook, value: CONTACT.facebook && text.channels.facebookValue, link: CONTACT.facebook },
+    { label: text.channels.zalo, value: CONTACT.zalo && text.channels.zaloValue, link: CONTACT.zalo },
+  ].filter((channel) => channel.value);
+
   return (
-    <Section id="contact" eyebrow="Liên hệ" title="Kết nối với tôi">
+    <Section id="contact" eyebrow={text.eyebrow} title={text.title}>
       <Reveal>
         <div className="rounded-3xl bg-accent-800 p-8 text-white sm:p-12">
-          <h3 className="font-serif text-2xl font-semibold sm:text-3xl">
-            Cơ hội học tập, nghiên cứu hoặc việc làm?
-          </h3>
-          <p className="mt-4 max-w-2xl leading-relaxed text-accent-50">
-            [Một hai câu: đang tìm kiếm điều gì — vị trí sau tốt nghiệp, nhóm nghiên cứu, người hướng dẫn — và cách liên
-            hệ thuận tiện nhất.]
-          </p>
+          <h3 className="font-serif text-2xl font-semibold sm:text-3xl">{text.heading}</h3>
+          <p className="mt-4 max-w-2xl leading-relaxed text-accent-50">{text.body}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={`mailto:${CONTACT.email}`}
               className="rounded-lg bg-white px-6 py-3 font-semibold text-accent-800 transition-colors hover:bg-accent-50"
             >
-              Gửi email
+              {text.sendEmail}
             </a>
-            {PROFILE.cvUrl && (
+            {profile.cvUrl && (
               <a
-                href={PROFILE.cvUrl}
+                href={profile.cvUrl}
                 download
                 className="rounded-lg border border-white/40 px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10"
               >
-                Tải CV
+                {ui.downloadCv}
               </a>
             )}
           </div>
@@ -44,7 +42,7 @@ function ContactSection() {
       </Reveal>
 
       <Stagger className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {CHANNELS.map((channel) => (
+        {channels.map((channel) => (
           <StaggerItem key={channel.label}>
             <a
               href={channel.link}

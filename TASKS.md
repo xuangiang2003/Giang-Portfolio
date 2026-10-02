@@ -7,7 +7,13 @@ Chạy local: `npm install` → `npm run dev` → http://localhost:3000
 Kiểm tra bản production: `npm run build` → `npm run start`
 Bản đang chạy: https://giang-portfolio-ten.vercel.app (repo `xuangiang2003/Giang-Portfolio`, nhánh `main` tự deploy)
 
-Toàn bộ nội dung nằm ở một file: [src/data/profile.js](src/data/profile.js). Chỗ nào còn `[...]` là nội dung mẫu.
+Trang có hai ngôn ngữ: tiếng Việt ở `/` (mặc định), tiếng Anh ở `/en`, đổi bằng dropdown trên header.
+
+Nội dung nằm trong [src/data/](src/data/). Chỗ nào còn `[...]` là nội dung mẫu.
+
+- [vi.js](src/data/vi.js) — nội dung tiếng Việt
+- [en.js](src/data/en.js) — nội dung tiếng Anh (cùng cấu trúc với `vi.js`, sửa bên này nhớ sửa bên kia)
+- [site.js](src/data/site.js) — phần dùng chung: kênh liên hệ, ảnh chân dung, danh sách ngôn ngữ
 
 ---
 
@@ -15,7 +21,8 @@ Toàn bộ nội dung nằm ở một file: [src/data/profile.js](src/data/profi
 
 - [x] Khởi tạo Next.js + Tailwind + motion, alias `@/` → `src/`
 - [x] Tông sáng, màu nhấn teal, font Be Vietnam Pro (chữ thường) + Lora (tiêu đề), có dấu tiếng Việt
-- [x] Tách nội dung ra `src/data/profile.js`
+- [x] Tách nội dung ra `src/data/`
+- [x] Song ngữ Việt – Anh: dropdown chọn ngôn ngữ, mặc định tiếng Việt, có `hreflang` và sitemap cho cả hai
 - [x] Header cố định, tự sáng mục đang xem, nút "Tải CV" (tự ẩn khi chưa có file)
 - [x] Hero: tên, "Sinh viên Y khoa năm 6", trường, thời điểm tốt nghiệp, định hướng, ảnh chân dung, 4 con số
 - [x] Giới thiệu + quan tâm và định hướng
@@ -31,8 +38,8 @@ Toàn bộ nội dung nằm ở một file: [src/data/profile.js](src/data/profi
 
 - [ ] Họ tên đầy đủ, trường, thời điểm dự kiến tốt nghiệp, tỉnh / thành
 - [ ] Chuyên ngành định hướng và mục tiêu sau tốt nghiệp (nội trú, chuyên khoa, nơi muốn làm)
-- [ ] Ảnh chân dung (dọc 4:5, tối thiểu 1200px, nén dưới 300KB) → `public/portrait.jpg`, điền `PROFILE.portrait`
-- [ ] File CV dạng PDF → `public/cv.pdf`, điền `PROFILE.cvUrl`
+- [ ] Ảnh chân dung (dọc 4:5, tối thiểu 1200px, nén dưới 300KB) → `public/portrait.jpg`, điền `PORTRAIT` trong `site.js`
+- [ ] File CV dạng PDF, mỗi ngôn ngữ một bản → `public/cv-vi.pdf`, `public/cv-en.pdf`, điền `cvUrl` trong `vi.js` và `en.js`
 - [ ] Câu giới thiệu ngắn (tagline) + 3 đoạn "Giới thiệu"
 - [x] 4 con số nổi bật: GPA 3.65/4.0, 6 năm, 4 bệnh viện, VSTEP
 - [ ] Học vấn: trường, năm, GPA, xếp loại
@@ -45,13 +52,13 @@ Toàn bộ nội dung nằm ở một file: [src/data/profile.js](src/data/profi
 
 ## Giai đoạn 2 — Hoàn thiện giao diện
 
-- [ ] Thay hết `[...]` trong `src/data/profile.js` và câu mẫu trong `ContactSection.js`
+- [ ] Thay hết `[...]` trong `vi.js`, `en.js` và `site.js`
+- [ ] Nhờ Giang đọc lại bản tiếng Anh (tên trường, tên chuyên ngành, cách diễn đạt)
 - [ ] Bỏ mục nào chưa có nội dung thay vì để trống
 - [ ] Chốt màu nhấn (`tailwind.config.js` + `--accent-rgb` trong `globals.css`)
 - [ ] Soát giao diện trên điện thoại (360px), tablet, desktop
 - [ ] Ảnh Open Graph khi chia sẻ link (`src/app/opengraph-image`)
 - [ ] Ảnh hoạt động: hội nghị, tình nguyện, thực tập (tuỳ chọn)
-- [ ] Bản tiếng Anh (tuỳ chọn — hữu ích nếu xin học bổng / chương trình nước ngoài)
 
 ## Giai đoạn 3 — Kiểm tra nội dung
 
@@ -80,6 +87,6 @@ Domain riêng (tuỳ chọn, làm sau):
 
 ## Khi tốt nghiệp và có giấy phép hành nghề
 
-- [ ] Đổi `PROFILE.role`, thêm nơi công tác
+- [ ] Đổi `profile.role` trong `vi.js` và `en.js`, thêm nơi công tác
 - [ ] Thêm lại các mục của trang bác sĩ (chuyên môn, lịch khám, đặt lịch) — có trong lịch sử git, commit `786d3aa`
 - [ ] Khi đó mới cần xét quy định quảng cáo dịch vụ khám chữa bệnh

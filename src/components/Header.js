@@ -1,11 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { NAV, PROFILE } from "@/data/profile";
+import { LANGUAGES } from "@/data/site";
 
-const LINKS = NAV.filter(({ id }) => id !== "top");
-
-function Header() {
+function Header({ lang, nav, shortName, cvUrl, ui }) {
   const [active, setActive] = useState("");
   const [scrolled, setScrolled] = useState(false);
 
@@ -23,7 +21,7 @@ function Header() {
       },
       { rootMargin: "-45% 0px -50% 0px" }
     );
-    NAV.forEach(({ id }) => {
+    ["top", ...nav.map(({ id }) => id)].forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
@@ -32,7 +30,13 @@ function Header() {
       window.removeEventListener("scroll", onScroll);
       observer.disconnect();
     };
-  }, []);
+  }, [nav]);
+
+  // Giữ nguyên mục đang xem (#about...) khi đổi ngôn ngữ
+  function changeLanguage(event) {
+    const target = LANGUAGES.find(({ code }) => code === event.target.value);
+    if (target) window.location.href = target.path + window.location.hash;
+  }
 
   return (
     <header
@@ -40,12 +44,12 @@ function Header() {
         scrolled ? "border-slate-200 bg-white/90 backdrop-blur-md" : "border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
         <a href="#top" className="shrink-0 font-serif text-lg font-semibold text-ink">
-          {PROFILE.shortName}
+          {shortName}
         </a>
         <nav className="no-scrollbar flex min-w-0 gap-1 overflow-x-auto text-sm">
-          {LINKS.map(({ id, label }) => (
+          {nav.map(({ id, label }) => (
             <a
               key={id}
               href={`#${id}`}
@@ -57,15 +61,29 @@ function Header() {
             </a>
           ))}
         </nav>
-        {PROFILE.cvUrl && (
-          <a
-            href={PROFILE.cvUrl}
-            download
-            className="hidden shrink-0 rounded-full bg-accent-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-800 md:block"
+        <div className="flex shrink-0 items-center gap-2">
+          <select
+            aria-label={ui.language}
+            value={lang}
+            onChange={changeLanguage}
+            className="cursor-pointer rounded-full border border-slate-300 bg-white py-1.5 pl-3 pr-2 text-sm text-ink transition-colors hover:border-accent-500 focus:border-accent-600 focus:outline-none"
           >
-            Tải CV
-          </a>
-        )}
+            {LANGUAGES.map(({ code, label }) => (
+              <option key={code} value={code}>
+                {label}
+              </option>
+            ))}
+          </select>
+          {cvUrl && (
+            <a
+              href={cvUrl}
+              download
+              className="hidden rounded-full bg-accent-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-800 md:block"
+            >
+              {ui.downloadCv}
+            </a>
+          )}
+        </div>
       </div>
     </header>
   );
