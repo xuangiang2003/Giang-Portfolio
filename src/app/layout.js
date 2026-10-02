@@ -1,5 +1,5 @@
 import { Be_Vietnam_Pro, Lora } from "next/font/google";
-import { DOCTOR, SITE_URL } from "@/data/profile";
+import { PROFILE, SITE_URL } from "@/data/profile";
 import "./globals.css";
 
 const sans = Be_Vietnam_Pro({
@@ -15,8 +15,8 @@ const serif = Lora({
   display: "swap",
 });
 
-const title = `${DOCTOR.name} — ${DOCTOR.specialty}`;
-const description = `${DOCTOR.title} ${DOCTOR.name}, ${DOCTOR.specialty} tại ${DOCTOR.workplace}. ${DOCTOR.tagline}`;
+const title = `${PROFILE.name} — ${PROFILE.role}`;
+const description = `${PROFILE.name}, ${PROFILE.role} tại ${PROFILE.school}. ${PROFILE.tagline}`;
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),

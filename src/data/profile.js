@@ -1,121 +1,131 @@
 // TOÀN BỘ nội dung của trang nằm ở file này — sửa ở đây, không cần đụng vào component.
-// Những chỗ còn trong ngoặc vuông [...] là nội dung mẫu, phải thay bằng thông tin thật
-// của bác sĩ trước khi đưa lên domain chính thức.
+// Những chỗ còn trong ngoặc vuông [...] là nội dung mẫu, phải thay bằng thông tin thật.
 
-// Domain thật: đặt biến NEXT_PUBLIC_SITE_URL trên Vercel (vd: https://bacsigiang.vn)
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+// Trên Vercel tự lấy domain production của project (vd: giang-portfolio-ten.vercel.app).
+// Khi có domain riêng: đặt biến NEXT_PUBLIC_SITE_URL trên Vercel (vd: https://xuangiang.vn)
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000");
 
-export const DOCTOR = {
-  name: "[Họ và tên bác sĩ]",
-  shortName: "BS. Giang",
-  title: "[Học hàm / học vị — vd: ThS.BS, BS.CKI]",
-  specialty: "[Chuyên khoa]",
-  workplace: "[Bệnh viện / phòng khám đang công tác]",
+export const PROFILE = {
+  name: "[Họ và tên]",
+  shortName: "Giang",
+  // Chưa tốt nghiệp và chưa có giấy phép hành nghề thì không ghi "Bác sĩ" / "BS."
+  role: "Sinh viên Y khoa năm 6",
+  school: "[Trường đại học]",
+  graduation: "[Dự kiến tốt nghiệp: tháng ../20..]",
+  interest: "[Chuyên ngành định hướng — vd: Nội khoa, Nhi khoa]",
   city: "[Tỉnh / Thành phố]",
-  // Số chứng chỉ / giấy phép hành nghề — quảng cáo dịch vụ KCB phải khớp với phạm vi ghi trên giấy này
-  license: "[Số giấy phép hành nghề]",
-  tagline: "[Một câu ngắn về cách bác sĩ chăm sóc người bệnh — tận tâm, dựa trên bằng chứng, dễ hiểu.]",
+  tagline: "[Một hai câu về bản thân: đang học gì, quan tâm lĩnh vực nào, mục tiêu sau khi tốt nghiệp.]",
   // Đặt ảnh vào public/ (vd: public/portrait.jpg) rồi điền "/portrait.jpg". Để trống thì hiện khung giữ chỗ.
   portrait: "",
+  // Đặt file CV vào public/ (vd: public/cv.pdf) rồi điền "/cv.pdf". Để trống thì nút "Tải CV" bị ẩn.
+  cvUrl: "",
 };
 
+// Kênh nào để trống thì tự ẩn
 export const CONTACT = {
-  phone: "[Số điện thoại]",
   email: "[email@example.com]",
-  zalo: "", // vd: "https://zalo.me/09xxxxxxxx"
+  phone: "",
+  linkedin: "",
   facebook: "",
-  // Link đặt lịch (trang bệnh viện, Zalo OA, Google Form...). Để trống thì nút dẫn xuống mục Liên hệ.
-  bookingUrl: "",
+  zalo: "", // vd: "https://zalo.me/09xxxxxxxx"
 };
 
 export const STATS = [
-  { value: "[10+]", label: "năm kinh nghiệm lâm sàng" },
-  { value: "[5.000+]", label: "lượt khám và điều trị" },
-  { value: "[12]", label: "bài báo khoa học" },
-  { value: "[3]", label: "hội chuyên ngành là thành viên" },
+  { value: "[3.5/4.0]", label: "điểm trung bình tích luỹ" },
+  { value: "[8]", label: "khoa đã thực tập lâm sàng" },
+  { value: "[2]", label: "đề tài nghiên cứu khoa học" },
+  { value: "[IELTS 7.0]", label: "ngoại ngữ" },
 ];
 
 export const ABOUT = {
   paragraphs: [
-    "[Đoạn 1 — Bác sĩ là ai, đang làm việc ở đâu, chuyên sâu về nhóm bệnh nào.]",
-    "[Đoạn 2 — Quá trình học tập và hành nghề nổi bật, điều gì đưa bác sĩ đến với chuyên khoa này.]",
-    "[Đoạn 3 — Quan điểm điều trị: lắng nghe, giải thích rõ ràng, quyết định cùng người bệnh.]",
+    "[Đoạn 1 — Bạn là ai, đang học ở đâu, vì sao chọn ngành Y.]",
+    "[Đoạn 2 — Trải nghiệm đáng nhớ trong quá trình học và thực tập, điều bạn học được từ đó.]",
+    "[Đoạn 3 — Định hướng sau tốt nghiệp: chuyên ngành, nội trú, nơi muốn làm việc.]",
   ],
   highlights: [
-    "[Thế mạnh chuyên môn 1]",
-    "[Thế mạnh chuyên môn 2]",
-    "[Ngôn ngữ làm việc: Tiếng Việt, Tiếng Anh]",
+    "[Lĩnh vực quan tâm 1]",
+    "[Lĩnh vực quan tâm 2]",
+    "[Mục tiêu gần: thi nội trú / học chuyên khoa / xin việc tại ...]",
   ],
 };
 
-export const SPECIALTIES = [
-  { title: "[Lĩnh vực 1]", description: "[Mô tả ngắn: khám, chẩn đoán và điều trị những bệnh gì.]" },
-  { title: "[Lĩnh vực 2]", description: "[Mô tả ngắn.]" },
-  { title: "[Lĩnh vực 3]", description: "[Mô tả ngắn.]" },
-  { title: "[Thủ thuật / kỹ thuật]", description: "[Mô tả ngắn.]" },
-  { title: "[Tư vấn & theo dõi]", description: "[Mô tả ngắn.]" },
-  { title: "[Tầm soát / dự phòng]", description: "[Mô tả ngắn.]" },
-];
-
 // Mới nhất để trên cùng
-export const EXPERIENCE = [
+export const EDUCATION = [
   {
-    time: "[2020] – Hiện tại",
-    role: "[Chức danh]",
-    place: "[Bệnh viện / khoa]",
-    description: "[Phụ trách công việc gì, nhóm bệnh nào.]",
+    time: "[2021] – [2027]",
+    degree: "[Bác sĩ Y khoa]",
+    school: "[Trường đại học]",
+    details: ["[Điểm trung bình tích luỹ: ../4.0]", "[Xếp loại / học bổng / danh hiệu]"],
   },
   {
-    time: "[2015] – [2020]",
-    role: "[Chức danh]",
-    place: "[Bệnh viện / khoa]",
+    time: "[2018] – [2021]",
+    degree: "[THPT — lớp chuyên ...]",
+    school: "[Trường THPT]",
+    details: ["[Giải thưởng học sinh giỏi nếu có]"],
+  },
+];
+
+export const AWARDS = ["[Học bổng / giải thưởng 1 — năm]", "[Học bổng / giải thưởng 2 — năm]"];
+
+// Các đợt thực tập lâm sàng
+export const ROTATIONS = [
+  {
+    department: "[Nội khoa]",
+    hospital: "[Bệnh viện]",
+    time: "[Thời gian]",
+    description: "[Đã tham gia những gì: hỏi bệnh, khám, làm bệnh án, trực, thủ thuật được quan sát / thực hiện.]",
+  },
+  { department: "[Ngoại khoa]", hospital: "[Bệnh viện]", time: "[Thời gian]", description: "[Mô tả ngắn.]" },
+  { department: "[Sản phụ khoa]", hospital: "[Bệnh viện]", time: "[Thời gian]", description: "[Mô tả ngắn.]" },
+  { department: "[Nhi khoa]", hospital: "[Bệnh viện]", time: "[Thời gian]", description: "[Mô tả ngắn.]" },
+];
+
+export const RESEARCH = [
+  {
+    year: "[2026]",
+    title: "[Tên đề tài / bài báo / báo cáo hội nghị]",
+    role: "[Vai trò: chủ nhiệm đề tài, thành viên, đồng tác giả]",
+    venue: "[Hội nghị khoa học sinh viên / tạp chí]",
+    url: "",
+  },
+  { year: "[2025]", title: "[Tên đề tài]", role: "[Vai trò]", venue: "[Nơi báo cáo / công bố]", url: "" },
+];
+
+export const ACTIVITIES = [
+  {
+    time: "[2023] – [2025]",
+    title: "[Chức vụ / vai trò]",
+    organization: "[Câu lạc bộ, Đoàn – Hội, tổ chức]",
+    description: "[Đã làm gì, kết quả ra sao.]",
+  },
+  {
+    time: "[2024]",
+    title: "[Tình nguyện viên]",
+    organization: "[Chương trình khám bệnh tình nguyện / mùa hè xanh]",
     description: "[Mô tả ngắn.]",
   },
 ];
 
-export const EDUCATION = [
-  { time: "[2018]", degree: "[Chuyên khoa I / Thạc sĩ ...]", school: "[Trường đại học]" },
-  { time: "[2014]", degree: "[Bác sĩ đa khoa]", school: "[Trường đại học]" },
-  { time: "[2019]", degree: "[Khoá đào tạo ngắn hạn / fellowship]", school: "[Đơn vị đào tạo, quốc gia]" },
+export const SKILLS = [
+  { group: "Lâm sàng", items: ["[Hỏi bệnh, khám lâm sàng]", "[Làm bệnh án]", "[Thủ thuật cơ bản]"] },
+  { group: "Nghiên cứu", items: ["[Tìm và đọc y văn]", "[Thống kê: SPSS / R]", "[Viết báo cáo khoa học]"] },
+  { group: "Ngoại ngữ", items: ["[Tiếng Anh — IELTS ...]", "[Ngoại ngữ khác]"] },
+  { group: "Khác", items: ["[Thuyết trình]", "[Làm việc nhóm]", "[Tin học văn phòng]"] },
 ];
 
-export const CERTIFICATIONS = [
-  "[Chứng chỉ hành nghề khám bệnh, chữa bệnh — phạm vi ...]",
-  "[Chứng chỉ chuyên sâu 1]",
-  "[Chứng chỉ chuyên sâu 2]",
-];
-
-export const MEMBERSHIPS = ["[Hội chuyên ngành 1]", "[Hội chuyên ngành 2]"];
-
-export const PUBLICATIONS = [
-  { year: "[2024]", title: "[Tên bài báo / báo cáo hội nghị]", venue: "[Tạp chí / hội nghị]", url: "" },
-  { year: "[2022]", title: "[Tên bài báo / báo cáo hội nghị]", venue: "[Tạp chí / hội nghị]", url: "" },
-];
-
-export const LOCATIONS = [
-  {
-    name: "[Bệnh viện / phòng khám 1]",
-    address: "[Số nhà, đường, phường, tỉnh/thành]",
-    mapUrl: "", // link Google Maps
-    hours: [
-      { days: "Thứ 2 – Thứ 6", time: "[07:30 – 16:30]" },
-      { days: "Thứ 7", time: "[07:30 – 11:30]" },
-    ],
-  },
-  {
-    name: "[Phòng khám ngoài giờ]",
-    address: "[Địa chỉ]",
-    mapUrl: "",
-    hours: [{ days: "Thứ 2 – Thứ 6", time: "[17:30 – 20:00]" }],
-  },
-];
+export const CERTIFICATIONS = ["[Chứng chỉ 1 — vd: Cấp cứu cơ bản (BLS)]", "[Chứng chỉ 2]"];
 
 export const NAV = [
   { id: "top", label: "Trang đầu" },
   { id: "about", label: "Giới thiệu" },
-  { id: "specialties", label: "Chuyên môn" },
-  { id: "experience", label: "Kinh nghiệm" },
-  { id: "credentials", label: "Chứng chỉ" },
-  { id: "schedule", label: "Lịch khám" },
+  { id: "education", label: "Học vấn" },
+  { id: "rotations", label: "Lâm sàng" },
+  { id: "research", label: "Nghiên cứu" },
+  { id: "skills", label: "Kỹ năng" },
   { id: "contact", label: "Liên hệ" },
 ];

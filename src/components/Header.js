@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CONTACT, DOCTOR, NAV } from "@/data/profile";
+import { NAV, PROFILE } from "@/data/profile";
 
 const LINKS = NAV.filter(({ id }) => id !== "top");
 
@@ -42,7 +42,7 @@ function Header() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <a href="#top" className="shrink-0 font-serif text-lg font-semibold text-ink">
-          {DOCTOR.shortName}
+          {PROFILE.shortName}
         </a>
         <nav className="no-scrollbar flex min-w-0 gap-1 overflow-x-auto text-sm">
           {LINKS.map(({ id, label }) => (
@@ -57,12 +57,15 @@ function Header() {
             </a>
           ))}
         </nav>
-        <a
-          href={CONTACT.bookingUrl || "#contact"}
-          className="hidden shrink-0 rounded-full bg-accent-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-800 md:block"
-        >
-          Đặt lịch khám
-        </a>
+        {PROFILE.cvUrl && (
+          <a
+            href={PROFILE.cvUrl}
+            download
+            className="hidden shrink-0 rounded-full bg-accent-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-800 md:block"
+          >
+            Tải CV
+          </a>
+        )}
       </div>
     </header>
   );

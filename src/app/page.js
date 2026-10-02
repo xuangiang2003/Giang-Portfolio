@@ -1,32 +1,27 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
-import SpecialtiesSection from "@/components/SpecialtiesSection";
-import ExperienceSection from "@/components/ExperienceSection";
-import CredentialsSection from "@/components/CredentialsSection";
-import ScheduleSection from "@/components/ScheduleSection";
+import EducationSection from "@/components/EducationSection";
+import RotationsSection from "@/components/RotationsSection";
+import ResearchSection from "@/components/ResearchSection";
+import SkillsSection from "@/components/SkillsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import { MotionProvider } from "@/components/ui/motion";
-import { CONTACT, DOCTOR, LOCATIONS, SITE_URL } from "@/data/profile";
+import { CONTACT, PROFILE, SITE_URL } from "@/data/profile";
 
-// Dữ liệu có cấu trúc để Google hiểu đây là trang hồ sơ của một bác sĩ
+// Dữ liệu có cấu trúc để Google hiểu đây là trang hồ sơ của một người
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Physician",
-  name: DOCTOR.name,
-  description: DOCTOR.tagline,
-  medicalSpecialty: DOCTOR.specialty,
+  "@type": "Person",
+  name: PROFILE.name,
+  description: PROFILE.tagline,
+  jobTitle: PROFILE.role,
+  alumniOf: PROFILE.school,
   url: SITE_URL,
-  telephone: CONTACT.phone,
   email: CONTACT.email,
-  address: LOCATIONS.map((location) => ({
-    "@type": "PostalAddress",
-    name: location.name,
-    streetAddress: location.address,
-    addressCountry: "VN",
-  })),
+  sameAs: [CONTACT.linkedin, CONTACT.facebook].filter(Boolean),
 };
 
 export default function Home() {
@@ -38,10 +33,10 @@ export default function Home() {
         <main>
           <Hero />
           <AboutSection />
-          <SpecialtiesSection />
-          <ExperienceSection />
-          <CredentialsSection />
-          <ScheduleSection />
+          <EducationSection />
+          <RotationsSection />
+          <ResearchSection />
+          <SkillsSection />
           <ContactSection />
         </main>
         <Footer />
