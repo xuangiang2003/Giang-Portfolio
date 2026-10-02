@@ -10,15 +10,17 @@ export const SITE_URL =
     : "http://localhost:3000");
 
 export const PROFILE = {
-  name: "[Họ và tên]",
+  // Điền họ tên đầy đủ khi có
+  name: "Giang",
   shortName: "Giang",
   // Chưa tốt nghiệp và chưa có giấy phép hành nghề thì không ghi "Bác sĩ" / "BS."
   role: "Sinh viên Y khoa năm 6",
-  school: "[Trường đại học]",
+  school: "Trường Đại học Y Dược Cần Thơ",
   graduation: "[Dự kiến tốt nghiệp: tháng ../20..]",
-  interest: "[Chuyên ngành định hướng — vd: Nội khoa, Nhi khoa]",
-  city: "[Tỉnh / Thành phố]",
-  tagline: "[Một hai câu về bản thân: đang học gì, quan tâm lĩnh vực nào, mục tiêu sau khi tốt nghiệp.]",
+  interest: "Sản Phụ khoa & Ngoại khoa",
+  city: "Cần Thơ",
+  tagline:
+    "Mình là sinh viên Y khoa năm 6 tại Trường Đại học Y Dược Cần Thơ. Trong quá trình học tập và thực hành lâm sàng, mình đặc biệt quan tâm đến Sản Phụ khoa và Ngoại khoa. Mình mong muốn tiếp tục trau dồi kiến thức, kỹ năng lâm sàng và kinh nghiệm thực tế để chuẩn bị tốt cho định hướng chuyên môn sau khi tốt nghiệp.",
   // Đặt ảnh vào public/ (vd: public/portrait.jpg) rồi điền "/portrait.jpg". Để trống thì hiện khung giữ chỗ.
   portrait: "",
   // Đặt file CV vào public/ (vd: public/cv.pdf) rồi điền "/cv.pdf". Để trống thì nút "Tải CV" bị ẩn.
@@ -35,10 +37,10 @@ export const CONTACT = {
 };
 
 export const STATS = [
-  { value: "[3.5/4.0]", label: "điểm trung bình tích luỹ" },
-  { value: "[8]", label: "khoa đã thực tập lâm sàng" },
-  { value: "[2]", label: "đề tài nghiên cứu khoa học" },
-  { value: "[IELTS 7.0]", label: "ngoại ngữ" },
+  { value: "3.65/4.0", label: "điểm trung bình tích luỹ" },
+  { value: "6 năm", label: "chương trình đào tạo Y khoa" },
+  { value: "4 bệnh viện", label: "đã thực tập lâm sàng" },
+  { value: "VSTEP bậc 3", label: "ngoại ngữ" },
 ];
 
 export const ABOUT = {
@@ -48,8 +50,8 @@ export const ABOUT = {
     "[Đoạn 3 — Định hướng sau tốt nghiệp: chuyên ngành, nội trú, nơi muốn làm việc.]",
   ],
   highlights: [
-    "[Lĩnh vực quan tâm 1]",
-    "[Lĩnh vực quan tâm 2]",
+    "Sản Phụ khoa",
+    "Ngoại khoa",
     "[Mục tiêu gần: thi nội trú / học chuyên khoa / xin việc tại ...]",
   ],
 };
@@ -58,9 +60,9 @@ export const ABOUT = {
 export const EDUCATION = [
   {
     time: "[2021] – [2027]",
-    degree: "[Bác sĩ Y khoa]",
-    school: "[Trường đại học]",
-    details: ["[Điểm trung bình tích luỹ: ../4.0]", "[Xếp loại / học bổng / danh hiệu]"],
+    degree: "Y khoa (chương trình 6 năm)",
+    school: "Trường Đại học Y Dược Cần Thơ",
+    details: ["Điểm trung bình tích luỹ: 3.65/4.0", "[Xếp loại / học bổng / danh hiệu]"],
   },
   {
     time: "[2018] – [2021]",
@@ -85,17 +87,6 @@ export const ROTATIONS = [
   { department: "[Nhi khoa]", hospital: "[Bệnh viện]", time: "[Thời gian]", description: "[Mô tả ngắn.]" },
 ];
 
-export const RESEARCH = [
-  {
-    year: "[2026]",
-    title: "[Tên đề tài / bài báo / báo cáo hội nghị]",
-    role: "[Vai trò: chủ nhiệm đề tài, thành viên, đồng tác giả]",
-    venue: "[Hội nghị khoa học sinh viên / tạp chí]",
-    url: "",
-  },
-  { year: "[2025]", title: "[Tên đề tài]", role: "[Vai trò]", venue: "[Nơi báo cáo / công bố]", url: "" },
-];
-
 export const ACTIVITIES = [
   {
     time: "[2023] – [2025]",
@@ -113,8 +104,7 @@ export const ACTIVITIES = [
 
 export const SKILLS = [
   { group: "Lâm sàng", items: ["[Hỏi bệnh, khám lâm sàng]", "[Làm bệnh án]", "[Thủ thuật cơ bản]"] },
-  { group: "Nghiên cứu", items: ["[Tìm và đọc y văn]", "[Thống kê: SPSS / R]", "[Viết báo cáo khoa học]"] },
-  { group: "Ngoại ngữ", items: ["[Tiếng Anh — IELTS ...]", "[Ngoại ngữ khác]"] },
+  { group: "Ngoại ngữ", items: ["Tiếng Anh — VSTEP bậc 3", "[Ngoại ngữ khác]"] },
   { group: "Khác", items: ["[Thuyết trình]", "[Làm việc nhóm]", "[Tin học văn phòng]"] },
 ];
 
@@ -125,7 +115,7 @@ export const NAV = [
   { id: "about", label: "Giới thiệu" },
   { id: "education", label: "Học vấn" },
   { id: "rotations", label: "Lâm sàng" },
-  { id: "research", label: "Nghiên cứu" },
+  { id: "activities", label: "Hoạt động" },
   { id: "skills", label: "Kỹ năng" },
   { id: "contact", label: "Liên hệ" },
 ];

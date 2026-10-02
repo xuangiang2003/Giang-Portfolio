@@ -5,7 +5,7 @@ import { CERTIFICATIONS, SKILLS } from "@/data/profile";
 function SkillsSection() {
   return (
     <Section id="skills" eyebrow="Kỹ năng" title="Kỹ năng và chứng chỉ" tinted>
-      <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <Stagger className="grid gap-4 sm:grid-cols-3">
         {SKILLS.map((skill) => (
           <StaggerItem key={skill.group}>
             <div className="h-full rounded-2xl border border-slate-200 bg-paper p-6">

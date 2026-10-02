@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import EducationSection from "@/components/EducationSection";
 import RotationsSection from "@/components/RotationsSection";
-import ResearchSection from "@/components/ResearchSection";
+import ActivitiesSection from "@/components/ActivitiesSection";
 import SkillsSection from "@/components/SkillsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -35,7 +35,7 @@ export default function Home() {
           <AboutSection />
           <EducationSection />
           <RotationsSection />
-          <ResearchSection />
+          <ActivitiesSection />
           <SkillsSection />
           <ContactSection />
         </main>

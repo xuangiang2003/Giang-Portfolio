@@ -21,7 +21,7 @@ Toàn bộ nội dung nằm ở một file: [src/data/profile.js](src/data/profi
 - [x] Giới thiệu + quan tâm và định hướng
 - [x] Học vấn (timeline) + học bổng, giải thưởng
 - [x] Thực tập lâm sàng (thẻ theo từng khoa)
-- [x] Nghiên cứu khoa học + hoạt động ngoại khoá, tình nguyện
+- [x] Hoạt động ngoại khoá, tình nguyện (đã bỏ phần nghiên cứu khoa học theo yêu cầu)
 - [x] Kỹ năng theo nhóm + chứng chỉ
 - [x] Liên hệ (kênh để trống tự ẩn), footer, nút về đầu trang
 - [x] SEO nền: metadata, Open Graph, JSON-LD `Person`, `robots.txt`, `sitemap.xml`, favicon
@@ -34,11 +34,10 @@ Toàn bộ nội dung nằm ở một file: [src/data/profile.js](src/data/profi
 - [ ] Ảnh chân dung (dọc 4:5, tối thiểu 1200px, nén dưới 300KB) → `public/portrait.jpg`, điền `PROFILE.portrait`
 - [ ] File CV dạng PDF → `public/cv.pdf`, điền `PROFILE.cvUrl`
 - [ ] Câu giới thiệu ngắn (tagline) + 3 đoạn "Giới thiệu"
-- [ ] 4 con số nổi bật: GPA, số khoa đã thực tập, số đề tài, ngoại ngữ — chỉ dùng số có thể chứng minh
+- [x] 4 con số nổi bật: GPA 3.65/4.0, 6 năm, 4 bệnh viện, VSTEP
 - [ ] Học vấn: trường, năm, GPA, xếp loại
 - [ ] Học bổng, giải thưởng
 - [ ] Thực tập lâm sàng: khoa, bệnh viện, thời gian, đã làm gì
-- [ ] Nghiên cứu khoa học: tên đề tài, vai trò, nơi báo cáo / công bố, link
 - [ ] Hoạt động: câu lạc bộ, Đoàn – Hội, tình nguyện
 - [ ] Kỹ năng và chứng chỉ (BLS, ngoại ngữ, tin học...)
 - [ ] Kênh liên hệ: email, điện thoại, LinkedIn, Facebook, Zalo
@@ -47,7 +46,7 @@ Toàn bộ nội dung nằm ở một file: [src/data/profile.js](src/data/profi
 ## Giai đoạn 2 — Hoàn thiện giao diện
 
 - [ ] Thay hết `[...]` trong `src/data/profile.js` và câu mẫu trong `ContactSection.js`
-- [ ] Bỏ mục nào chưa có nội dung (vd: chưa có nghiên cứu thì ẩn phần đó) thay vì để trống
+- [ ] Bỏ mục nào chưa có nội dung thay vì để trống
 - [ ] Chốt màu nhấn (`tailwind.config.js` + `--accent-rgb` trong `globals.css`)
 - [ ] Soát giao diện trên điện thoại (360px), tablet, desktop
 - [ ] Ảnh Open Graph khi chia sẻ link (`src/app/opengraph-image`)
