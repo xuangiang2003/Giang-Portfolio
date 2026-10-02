@@ -6,7 +6,7 @@ function EducationSection({ content }) {
 
   return (
     <Section id="education" eyebrow={ui.education.eyebrow} title={ui.education.title}>
-      <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr]">
+      <div className={`grid gap-12 ${awards.length ? "lg:grid-cols-[1.6fr_1fr]" : ""}`}>
         <ol className="space-y-8 border-l-2 border-accent-100 pl-6">
           {education.map((item) => (
             <li key={`${item.degree}-${item.time}`} className="relative">
@@ -28,21 +28,23 @@ function EducationSection({ content }) {
           ))}
         </ol>
 
-        <Reveal delay={0.1}>
-          <div className="rounded-2xl border border-slate-200 bg-white p-6">
-            <h3 className="font-semibold text-ink">{ui.education.awards}</h3>
-            <ul className="mt-4 space-y-3 text-slate-600">
-              {awards.map((award) => (
-                <li key={award} className="flex gap-3">
-                  <span className="text-accent-600" aria-hidden="true">
-                    ✓
-                  </span>
-                  <span>{award}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Reveal>
+        {awards.length > 0 && (
+          <Reveal delay={0.1}>
+            <div className="rounded-2xl border border-slate-200 bg-white p-6">
+              <h3 className="font-semibold text-ink">{ui.education.awards}</h3>
+              <ul className="mt-4 space-y-3 text-slate-600">
+                {awards.map((award) => (
+                  <li key={award} className="flex gap-3">
+                    <span className="text-accent-600" aria-hidden="true">
+                      ✓
+                    </span>
+                    <span>{award}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        )}
       </div>
     </Section>
   );

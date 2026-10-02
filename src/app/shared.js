@@ -21,7 +21,7 @@ const serif = Lora({
 export function buildMetadata(lang) {
   const { profile } = getContent(lang);
   const path = LANGUAGES.find(({ code }) => code === lang).path;
-  const title = `${profile.name} — ${profile.role}`;
+  const title = profile.name;
   const description = `${profile.name}, ${profile.role}, ${profile.school}. ${profile.tagline}`;
 
   return {

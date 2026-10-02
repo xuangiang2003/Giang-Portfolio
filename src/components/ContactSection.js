@@ -21,13 +21,18 @@ function ContactSection({ content }) {
         <div className="rounded-3xl bg-accent-800 p-8 text-white sm:p-12">
           <h3 className="font-serif text-2xl font-semibold sm:text-3xl">{text.heading}</h3>
           <p className="mt-4 max-w-2xl leading-relaxed text-accent-50">{text.body}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href={`mailto:${CONTACT.email}`}
-              className="rounded-lg bg-white px-6 py-3 font-semibold text-accent-800 transition-colors hover:bg-accent-50"
-            >
-              {text.sendEmail}
-            </a>
+          <p className="mt-4 text-sm text-accent-100">
+            {profile.name} · {profile.role} · {text.location}
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3 empty:hidden">
+            {CONTACT.email && (
+              <a
+                href={`mailto:${CONTACT.email}`}
+                className="rounded-lg bg-white px-6 py-3 font-semibold text-accent-800 transition-colors hover:bg-accent-50"
+              >
+                {text.sendEmail}
+              </a>
+            )}
             {profile.cvUrl && (
               <a
                 href={profile.cvUrl}

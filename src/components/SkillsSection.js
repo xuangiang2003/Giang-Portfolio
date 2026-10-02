@@ -21,16 +21,21 @@ function SkillsSection({ content }) {
         ))}
       </Stagger>
 
-      <Reveal className="mt-8">
-        <h3 className="text-lg font-semibold text-ink">{ui.skills.certifications}</h3>
-        <ul className="mt-4 flex flex-wrap gap-2">
-          {certifications.map((cert) => (
-            <li key={cert} className="rounded-full border border-accent-200 bg-accent-50 px-4 py-1.5 text-sm text-accent-800">
-              {cert}
-            </li>
-          ))}
-        </ul>
-      </Reveal>
+      {certifications.length > 0 && (
+        <Reveal className="mt-8">
+          <h3 className="text-lg font-semibold text-ink">{ui.skills.certifications}</h3>
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {certifications.map((cert) => (
+              <li
+                key={cert}
+                className="rounded-full border border-accent-200 bg-accent-50 px-4 py-1.5 text-sm text-accent-800"
+              >
+                {cert}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+      )}
     </Section>
   );
 }

@@ -26,7 +26,7 @@ function ProfilePage({ lang }) {
     jobTitle: profile.role,
     alumniOf: profile.school,
     url: new URL(path, SITE_URL).href,
-    email: CONTACT.email,
+    email: CONTACT.email || undefined,
     sameAs: [CONTACT.linkedin, CONTACT.facebook].filter(Boolean),
   };
 

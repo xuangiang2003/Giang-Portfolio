@@ -19,7 +19,7 @@ export const PORTRAIT = "/portrait.jpg";
 
 // Kênh nào để trống thì tự ẩn
 export const CONTACT = {
-  email: "[email@example.com]",
+  email: "xuangiang2003@gmail.com",
   phone: "",
   linkedin: "",
   facebook: "",

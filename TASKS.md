@@ -36,25 +36,27 @@ Nội dung nằm trong [src/data/](src/data/). Chỗ nào còn `[...]` là nội
 
 ## Giai đoạn 1 — Thu thập nội dung từ Giang
 
-- [ ] Họ tên đầy đủ, trường, thời điểm dự kiến tốt nghiệp, tỉnh / thành
-- [ ] Chuyên ngành định hướng và mục tiêu sau tốt nghiệp (nội trú, chuyên khoa, nơi muốn làm)
+Đã điền theo bản preview Giang gửi (02/10/2026), cả bản Việt và bản Anh.
+
+- [x] Trường, năm tốt nghiệp dự kiến (2027), định hướng, đoạn giới thiệu, 3 đoạn "Về tôi"
+- [x] 4 con số nổi bật: GPA 3.67/4.0, 6 năm, 4 bệnh viện, VSTEP B1
+- [x] Học vấn: Y khoa 2021 – 2027
+- [x] Thực tập lâm sàng: 4 khoa tại 4 bệnh viện ở Cần Thơ
+- [x] Hoạt động: thực hành sức khoẻ cộng đồng, học tập và làm việc nhóm
+- [x] Kỹ năng lâm sàng, ngoại ngữ, kỹ năng khác
+- [x] Email liên hệ, câu trích và đoạn chữ ở khối Liên hệ
 - [x] Ảnh chân dung → `public/portrait.jpg` (đã cắt 4:5, 900×1125). Nên thay bằng ảnh chụp chuyên nghiệp hơn khi có (áo blouse, nền trơn)
+- [ ] Họ tên đầy đủ (hiện là "Xuân Giang", chưa có họ)
+- [ ] Thời gian từng đợt thực tập (hiện đang ẩn)
+- [ ] Học bổng, giải thưởng, chứng chỉ (hiện đang ẩn vì chưa có)
 - [ ] File CV dạng PDF, mỗi ngôn ngữ một bản → `public/cv-vi.pdf`, `public/cv-en.pdf`, điền `cvUrl` trong `vi.js` và `en.js`
-- [ ] Câu giới thiệu ngắn (tagline) + 3 đoạn "Giới thiệu"
-- [x] 4 con số nổi bật: GPA 3.67/4.0, 6 năm, 4 bệnh viện, VSTEP
-- [ ] Học vấn: trường, năm, GPA, xếp loại
-- [ ] Học bổng, giải thưởng
-- [ ] Thực tập lâm sàng: khoa, bệnh viện, thời gian, đã làm gì
-- [ ] Hoạt động: câu lạc bộ, Đoàn – Hội, tình nguyện
-- [ ] Kỹ năng và chứng chỉ (BLS, ngoại ngữ, tin học...)
-- [ ] Kênh liên hệ: email, điện thoại, LinkedIn, Facebook, Zalo
-- [ ] Đoạn chữ trong khối Liên hệ: đang tìm kiếm cơ hội gì
+- [ ] Kênh liên hệ khác: điện thoại, LinkedIn, Facebook, Zalo
 
 ## Giai đoạn 2 — Hoàn thiện giao diện
 
-- [ ] Thay hết `[...]` trong `vi.js`, `en.js` và `site.js`
-- [ ] Nhờ Giang đọc lại bản tiếng Anh (tên trường, tên chuyên ngành, cách diễn đạt)
-- [ ] Bỏ mục nào chưa có nội dung thay vì để trống
+- [x] Thay hết `[...]` trong `vi.js`, `en.js` và `site.js`
+- [ ] Giang xác nhận lại các chi tiết lấy từ bản preview: tên bệnh viện theo từng khoa, năm 2021 – 2027, hoạt động tại Phường Cái Vồn
+- [ ] Nhờ Giang đọc lại bản tiếng Anh (tên trường, tên bệnh viện, tên chuyên ngành, cách diễn đạt)
 - [ ] Chốt màu nhấn (`tailwind.config.js` + `--accent-rgb` trong `globals.css`)
 - [ ] Soát giao diện trên điện thoại (360px), tablet, desktop
 - [ ] Ảnh Open Graph khi chia sẻ link (`src/app/opengraph-image`)
