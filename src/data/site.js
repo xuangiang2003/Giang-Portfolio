@@ -15,7 +15,7 @@ export const LANGUAGES = [
 ];
 
 // Đặt ảnh vào public/ (vd: public/portrait.jpg) rồi điền "/portrait.jpg". Để trống thì hiện khung giữ chỗ.
-export const PORTRAIT = "";
+export const PORTRAIT = "/portrait.jpg";
 
 // Kênh nào để trống thì tự ẩn
 export const CONTACT = {

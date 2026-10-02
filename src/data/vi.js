@@ -21,7 +21,7 @@ const vi = {
   },
 
   stats: [
-    { value: "3.65/4.0", label: "điểm trung bình tích luỹ" },
+    { value: "3.67/4.0", label: "điểm trung bình tích luỹ" },
     { value: "6 năm", label: "chương trình đào tạo Y khoa" },
     { value: "4 bệnh viện", label: "đã thực tập lâm sàng" },
     { value: "VSTEP bậc 3", label: "ngoại ngữ" },
@@ -42,7 +42,7 @@ const vi = {
       time: "[2021] – [2027]",
       degree: "Y khoa (chương trình 6 năm)",
       school: "Trường Đại học Y Dược Cần Thơ",
-      details: ["Điểm trung bình tích luỹ: 3.65/4.0", "[Xếp loại / học bổng / danh hiệu]"],
+      details: ["Điểm trung bình tích luỹ: 3.67/4.0", "[Xếp loại / học bổng / danh hiệu]"],
     },
     {
       time: "[2018] – [2021]",

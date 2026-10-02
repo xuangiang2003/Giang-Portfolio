@@ -38,10 +38,10 @@ Nội dung nằm trong [src/data/](src/data/). Chỗ nào còn `[...]` là nội
 
 - [ ] Họ tên đầy đủ, trường, thời điểm dự kiến tốt nghiệp, tỉnh / thành
 - [ ] Chuyên ngành định hướng và mục tiêu sau tốt nghiệp (nội trú, chuyên khoa, nơi muốn làm)
-- [ ] Ảnh chân dung (dọc 4:5, tối thiểu 1200px, nén dưới 300KB) → `public/portrait.jpg`, điền `PORTRAIT` trong `site.js`
+- [x] Ảnh chân dung → `public/portrait.jpg` (đã cắt 4:5, 900×1125). Nên thay bằng ảnh chụp chuyên nghiệp hơn khi có (áo blouse, nền trơn)
 - [ ] File CV dạng PDF, mỗi ngôn ngữ một bản → `public/cv-vi.pdf`, `public/cv-en.pdf`, điền `cvUrl` trong `vi.js` và `en.js`
 - [ ] Câu giới thiệu ngắn (tagline) + 3 đoạn "Giới thiệu"
-- [x] 4 con số nổi bật: GPA 3.65/4.0, 6 năm, 4 bệnh viện, VSTEP
+- [x] 4 con số nổi bật: GPA 3.67/4.0, 6 năm, 4 bệnh viện, VSTEP
 - [ ] Học vấn: trường, năm, GPA, xếp loại
 - [ ] Học bổng, giải thưởng
 - [ ] Thực tập lâm sàng: khoa, bệnh viện, thời gian, đã làm gì

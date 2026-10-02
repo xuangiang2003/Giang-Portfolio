@@ -19,7 +19,7 @@ const en = {
   },
 
   stats: [
-    { value: "3.65/4.0", label: "cumulative GPA" },
+    { value: "3.67/4.0", label: "cumulative GPA" },
     { value: "6 years", label: "medical degree programme" },
     { value: "4 hospitals", label: "clinical rotations completed" },
     { value: "VSTEP Level 3", label: "English proficiency" },
@@ -43,7 +43,7 @@ const en = {
       time: "[2021] – [2027]",
       degree: "Doctor of Medicine (six-year programme)",
       school: "Can Tho University of Medicine and Pharmacy",
-      details: ["Cumulative GPA: 3.65/4.0", "[Classification / scholarships / honours]"],
+      details: ["Cumulative GPA: 3.67/4.0", "[Classification / scholarships / honours]"],
     },
     {
       time: "[2018] – [2021]",
