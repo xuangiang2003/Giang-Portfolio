@@ -34,6 +34,7 @@ Nội dung nằm trong [src/data/](src/data/). Chỗ nào còn `[...]` là nội
 - [x] SEO nền: metadata, Open Graph, JSON-LD `Person`, `robots.txt`, `sitemap.xml`, favicon
 - [x] Deploy lên Vercel, dùng domain `.vercel.app`
 - [x] Hiệu ứng: hero hiện theo lớp, ảnh mở kiểu kéo rèm, đường điện tim tự vẽ, số đếm chạy, timeline vẽ theo cuộn, menu trượt, thanh tiến độ đọc
+- [x] Menu xổ xuống trên điện thoại, biểu tượng tab "XG", gắn Vercel Analytics (cần bật trong dashboard Vercel)
 
 ## Giai đoạn 1 — Thu thập nội dung từ Giang
 
@@ -60,7 +61,7 @@ Nội dung nằm trong [src/data/](src/data/). Chỗ nào còn `[...]` là nội
 - [ ] Nhờ Giang đọc lại bản tiếng Anh (tên trường, tên bệnh viện, tên chuyên ngành, cách diễn đạt)
 - [ ] Chốt màu nhấn (`tailwind.config.js` + `--accent-rgb` trong `globals.css`)
 - [ ] Soát giao diện trên điện thoại (360px), tablet, desktop
-- [ ] Ảnh Open Graph khi chia sẻ link (`src/app/opengraph-image`)
+- [x] Ảnh xem trước khi chia sẻ link, mỗi ngôn ngữ một ảnh (`src/app/og.js`)
 - [ ] Ảnh hoạt động: hội nghị, tình nguyện, thực tập (tuỳ chọn)
 
 ## Giai đoạn 3 — Kiểm tra nội dung

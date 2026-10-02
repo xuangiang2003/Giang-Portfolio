@@ -1,4 +1,5 @@
 import { Be_Vietnam_Pro, Lora } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { LANGUAGES, SITE_URL, getContent } from "@/data";
 import "./globals.css";
 
@@ -33,13 +34,18 @@ export function buildMetadata(lang) {
       languages: Object.fromEntries(LANGUAGES.map(({ code, path }) => [code, path])),
     },
     openGraph: { title, description, url: path, type: "profile", locale: lang === "vi" ? "vi_VN" : "en_US" },
+    twitter: { card: "summary_large_image" },
   };
 }
 
 export function HtmlShell({ lang, children }) {
   return (
     <html lang={lang} className={`${sans.variable} ${serif.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* Thống kê lượt xem — chỉ ghi nhận trên bản deploy ở Vercel, sau khi bật Analytics trong dashboard */}
+        <Analytics />
+      </body>
     </html>
   );
 }

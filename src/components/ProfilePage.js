@@ -41,7 +41,7 @@ function ProfilePage({ lang }) {
           nav={nav}
           shortName={profile.shortName}
           cvUrl={profile.cvUrl}
-          ui={{ language: ui.language, downloadCv: ui.downloadCv }}
+          ui={{ language: ui.language, downloadCv: ui.downloadCv, menu: ui.menu }}
         />
         <main>
           <Hero content={content} />

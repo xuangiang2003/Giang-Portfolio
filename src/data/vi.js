@@ -135,6 +135,7 @@ const vi = {
   // Chữ cố định trên giao diện
   ui: {
     language: "Ngôn ngữ",
+    menu: "Menu",
     downloadCv: "Tải CV",
     contact: "Liên hệ",
     viewJourney: "Xem quá trình học →",

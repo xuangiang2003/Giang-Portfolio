@@ -128,6 +128,7 @@ const en = {
 
   ui: {
     language: "Language",
+    menu: "Menu",
     downloadCv: "Download CV",
     contact: "Contact",
     viewJourney: "See my training →",
