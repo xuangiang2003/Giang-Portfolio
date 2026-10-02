@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 import { LANGUAGES } from "@/data/site";
 
 function Header({ lang, nav, shortName, cvUrl, ui }) {
@@ -53,11 +54,19 @@ function Header({ lang, nav, shortName, cvUrl, ui }) {
             <a
               key={id}
               href={`#${id}`}
-              className={`whitespace-nowrap rounded-full px-3 py-1.5 transition-colors ${
-                active === id ? "bg-accent-50 font-medium text-accent-800" : "text-slate-600 hover:text-ink"
+              className={`relative whitespace-nowrap rounded-full px-3 py-1.5 transition-colors ${
+                active === id ? "text-accent-800" : "text-slate-600 hover:text-ink"
               }`}
             >
-              {label}
+              {/* Nền của mục đang xem trượt từ link này sang link kia */}
+              {active === id && (
+                <motion.span
+                  layoutId="nav-pill"
+                  className="absolute inset-0 rounded-full bg-accent-100"
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                />
+              )}
+              <span className="relative">{label}</span>
             </a>
           ))}
         </nav>

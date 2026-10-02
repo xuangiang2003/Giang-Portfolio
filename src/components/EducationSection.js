@@ -1,5 +1,5 @@
 import Section from "./ui/Section";
-import { Reveal } from "./ui/motion";
+import { Reveal, ScrollTimeline, TimelineDot } from "./ui/motion";
 
 function EducationSection({ content }) {
   const { education, awards, ui } = content;
@@ -7,26 +7,25 @@ function EducationSection({ content }) {
   return (
     <Section id="education" eyebrow={ui.education.eyebrow} title={ui.education.title}>
       <div className={`grid gap-12 ${awards.length ? "lg:grid-cols-[1.6fr_1fr]" : ""}`}>
-        <ol className="space-y-8 border-l-2 border-accent-100 pl-6">
-          {education.map((item) => (
-            <li key={`${item.degree}-${item.time}`} className="relative">
-              <span
-                className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full border-2 border-accent-600 bg-paper"
-                aria-hidden="true"
-              />
-              <Reveal>
-                <p className="text-sm font-medium text-accent-700">{item.time}</p>
-                <p className="mt-1 text-lg font-semibold text-ink">{item.degree}</p>
-                <p className="text-slate-600">{item.school}</p>
-                <ul className="mt-2 space-y-1 text-slate-600">
-                  {item.details.map((detail) => (
-                    <li key={detail}>{detail}</li>
-                  ))}
-                </ul>
-              </Reveal>
-            </li>
-          ))}
-        </ol>
+        <ScrollTimeline>
+          <ol className="space-y-8 pl-6">
+            {education.map((item) => (
+              <li key={`${item.degree}-${item.time}`} className="relative">
+                <TimelineDot className="absolute -left-[30px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-accent-600 bg-paper p-0.5" />
+                <Reveal>
+                  <p className="text-sm font-medium text-accent-700">{item.time}</p>
+                  <p className="mt-1 text-lg font-semibold text-ink">{item.degree}</p>
+                  <p className="text-slate-600">{item.school}</p>
+                  <ul className="mt-2 space-y-1 text-slate-600">
+                    {item.details.map((detail) => (
+                      <li key={detail}>{detail}</li>
+                    ))}
+                  </ul>
+                </Reveal>
+              </li>
+            ))}
+          </ol>
+        </ScrollTimeline>
 
         {awards.length > 0 && (
           <Reveal delay={0.1}>

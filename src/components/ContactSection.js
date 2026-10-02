@@ -1,5 +1,5 @@
 import Section from "./ui/Section";
-import { Reveal, Stagger, StaggerItem } from "./ui/motion";
+import { Reveal } from "./ui/motion";
 import { CONTACT } from "@/data/site";
 
 function ContactSection({ content }) {
@@ -24,20 +24,27 @@ function ContactSection({ content }) {
           <p className="mt-4 text-sm text-accent-100">
             {profile.name} · {profile.role} · {text.location}
           </p>
+
           <div className="mt-8 flex flex-wrap gap-3 empty:hidden">
-            {CONTACT.email && (
+            {channels.map((channel) => (
               <a
-                href={`mailto:${CONTACT.email}`}
-                className="rounded-lg bg-white px-6 py-3 font-semibold text-accent-800 transition-colors hover:bg-accent-50"
+                key={channel.label}
+                href={channel.link}
+                target={channel.link.startsWith("http") ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                className="min-w-0 rounded-xl border border-white/25 bg-white/10 px-5 py-3 transition-colors hover:bg-white/20"
               >
-                {text.sendEmail}
+                <span className="block text-xs font-semibold uppercase tracking-wider text-accent-100">
+                  {channel.label}
+                </span>
+                <span className="mt-0.5 block truncate font-semibold text-white">{channel.value}</span>
               </a>
-            )}
+            ))}
             {profile.cvUrl && (
               <a
                 href={profile.cvUrl}
                 download
-                className="rounded-lg border border-white/40 px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10"
+                className="flex items-center rounded-xl bg-white px-6 py-3 font-semibold text-accent-800 transition-colors hover:bg-accent-50"
               >
                 {ui.downloadCv}
               </a>
@@ -45,24 +52,6 @@ function ContactSection({ content }) {
           </div>
         </div>
       </Reveal>
-
-      <Stagger className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {channels.map((channel) => (
-          <StaggerItem key={channel.label}>
-            <a
-              href={channel.link}
-              target={channel.link.startsWith("http") ? "_blank" : undefined}
-              rel="noopener noreferrer"
-              className="block h-full rounded-xl border border-slate-200 bg-white p-4 transition-colors hover:border-accent-400"
-            >
-              <span className="block text-xs font-semibold uppercase tracking-wider text-slate-500">
-                {channel.label}
-              </span>
-              <span className="mt-1 block truncate font-medium text-ink">{channel.value}</span>
-            </a>
-          </StaggerItem>
-        ))}
-      </Stagger>
     </Section>
   );
 }

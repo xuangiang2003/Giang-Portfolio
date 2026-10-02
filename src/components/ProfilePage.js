@@ -8,6 +8,7 @@ import SkillsSection from "./SkillsSection";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
 import BackToTop from "./BackToTop";
+import ScrollProgress from "./ScrollProgress";
 import { MotionProvider } from "./ui/motion";
 import { CONTACT, LANGUAGES, SITE_URL, getContent } from "@/data";
 
@@ -34,6 +35,7 @@ function ProfilePage({ lang }) {
     <MotionProvider>
       {/* overflow-x-clip: phần tử đang trượt vào từ bên cạnh không làm trang cuộn ngang */}
       <div className="min-h-screen overflow-x-clip">
+        <ScrollProgress />
         <Header
           lang={lang}
           nav={nav}

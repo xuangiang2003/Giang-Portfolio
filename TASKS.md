@@ -33,6 +33,7 @@ Nội dung nằm trong [src/data/](src/data/). Chỗ nào còn `[...]` là nội
 - [x] Liên hệ (kênh để trống tự ẩn), footer, nút về đầu trang
 - [x] SEO nền: metadata, Open Graph, JSON-LD `Person`, `robots.txt`, `sitemap.xml`, favicon
 - [x] Deploy lên Vercel, dùng domain `.vercel.app`
+- [x] Hiệu ứng: hero hiện theo lớp, ảnh mở kiểu kéo rèm, đường điện tim tự vẽ, số đếm chạy, timeline vẽ theo cuộn, menu trượt, thanh tiến độ đọc
 
 ## Giai đoạn 1 — Thu thập nội dung từ Giang
 
