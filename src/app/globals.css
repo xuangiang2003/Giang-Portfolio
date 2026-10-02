@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Màu nhấn dạng RGB cho các hiệu ứng viết bằng CSS.
+   Đổi cùng lúc với `accent` trong tailwind.config.js. */
+:root {
+  --accent-rgb: 13 148 136;
+}
+
+@layer base {
+  body {
+    @apply bg-paper font-sans text-slate-700 antialiased;
+  }
+
+  /* Chừa chỗ cho header cố định khi bấm link #section */
+  section[id] {
+    scroll-margin-top: 4rem;
+  }
+
+  ::selection {
+    background: rgb(var(--accent-rgb) / 0.2);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

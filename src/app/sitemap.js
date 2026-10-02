@@ -1,0 +1,5 @@
+import { SITE_URL } from "@/data/profile";
+
+export default function sitemap() {
+  return [{ url: SITE_URL, lastModified: new Date() }];
+}
